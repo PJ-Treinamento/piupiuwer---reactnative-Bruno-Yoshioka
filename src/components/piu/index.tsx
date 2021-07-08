@@ -9,6 +9,7 @@ import GrayHeart from '../../assets/icons/gray-heart-icon.png';
 import PinkHeart from '../../assets/icons/pink-heart-icon.png';
 import GrayStar from '../../assets/icons/gray-star-icon.png';
 import YellowStar from '../../assets/icons/yellow-star-icon.png';
+import Trash from '../../assets/icons/trash-icon.png';
 
 const PiuCard: React.FC<ProcessedPiu> = ({id, user, likes, text, liked, favd, mine} : ProcessedPiu) => {
   const { token, user: myUser } = useAuth();
@@ -47,37 +48,34 @@ const PiuCard: React.FC<ProcessedPiu> = ({id, user, likes, text, liked, favd, mi
 		}
 	}
 
-  useEffect(() => {
-  }, [likeCounter, displayed]);
-
   return(
     <S.Card displayed={displayed}>
-      <View>
-        <Image source={{uri: `${user.photo}`}}/>
-      </View>
-      <View>
-        <View>
-          <View>
-            <Text>{user.first_name}</Text>
-            <Text>{user.username}</Text>
-          </View>
+      <S.PhotoView>
+        <S.UserPhoto source={{uri: `${user.photo}`}}/>
+      </S.PhotoView>
+      <S.ContentView>
+        <S.ViewContentHeader>
+          <S.HeaderText>
+            <S.UserFirstName>{user.first_name}</S.UserFirstName>
+            <S.UserUsername>@{user.username}</S.UserUsername>
+          </S.HeaderText>
           <S.deleteIcon appears={mine} onPress={deletePiu}>
-            <Image source={require('../../assets/icons/trash-icon.png')}/>
+            <S.deleteButtonText>delete</S.deleteButtonText>
           </S.deleteIcon>
-        </View>
+        </S.ViewContentHeader>
         <View>
-          <Text>{text}</Text>
+          <S.PiuText>{text}</S.PiuText>
         </View>
-        <View>
-          <TouchableOpacity>
-            <Image source={isLiked}/>
+        <S.Interactions>
+          <S.InteractiveButtons onPress={()=> {likePiu({id: `${id}`})}}>
+            <S.ButtonImage source={isLiked} />
             <Text>{likeCounter}</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image source={isFavd}/>
-          </TouchableOpacity>
-        </View>
-      </View>
+          </S.InteractiveButtons>
+          <S.InteractiveButtons onPress={()=> {FavPiu({id: `${id}`})}}>
+            <S.ButtonImage source={isFavd}/>
+          </S.InteractiveButtons>
+        </S.Interactions>
+      </S.ContentView>
     </S.Card>
   );
 }

@@ -38,7 +38,6 @@ export const Timeline = styled.View`
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background-color: red;
 ` 
 
 export const Logo = styled.Image`
@@ -47,6 +46,7 @@ export const Logo = styled.Image`
 `
 
 export const NavigationBar = styled.View`
+    background-color: #3F3D56;
     position: fixed;
     bottom: 0;
     display: flex;
@@ -56,6 +56,7 @@ export const NavigationBar = styled.View`
     justify-content: space-between;
     height: 5vh;
     padding: 0 5vw;
+    border: 1px solid #828282;
 `
 
 export const NavButtons = styled.TouchableOpacity`
@@ -84,8 +85,11 @@ export const FeedHeader = styled.View`
     width: 100vw;
     padding-right: 5vw;
     padding-left: 5vw;
+    padding-bottom: 1vh;
     background-color: #3F3D56;
     z-index: 1;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
+    border: 1px solid #828282;
 `

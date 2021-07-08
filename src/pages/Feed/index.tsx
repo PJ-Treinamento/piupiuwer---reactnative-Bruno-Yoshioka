@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 import SearchIcon from '../../assets/icons/search-icon.png';
 import PinkHome from '../../assets/icons/pink-home-icon.png';
 import ProfileIcon from '../../assets/icons/profile-icon.png';
-import { ScrollView } from 'react-native';
+import { ScrollView, TouchableOpacity } from 'react-native';
 
 const Feed: React.FC = () => {
   const { logout, token } = useAuth();
@@ -37,16 +37,19 @@ const Feed: React.FC = () => {
             <S.NavIconsSearch source={SearchIcon}/>
           </S.SearchButton>
         </S.FeedHeader>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false} >
         <S.Timeline>
           <Timeline pius={pius}/>
         </S.Timeline>
       </ScrollView>
+      <TouchableOpacity>
+        
+      </TouchableOpacity>
       <S.NavigationBar>
-          <S.NavButtons activeOpacity={0.9}>
+          <S.NavButtons activeOpacity={1}>
             <S.NavIcons source={PinkHome}/>
           </S.NavButtons>
-          <S.NavButtons activeOpacity={0.9}>
+          <S.NavButtons activeOpacity={1}>
             <S.NavIcons source={ProfileIcon}/>
           </S.NavButtons>
         </S.NavigationBar>

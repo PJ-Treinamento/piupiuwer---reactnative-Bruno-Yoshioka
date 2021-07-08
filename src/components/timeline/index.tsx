@@ -16,7 +16,6 @@ const Timeline: React.FC<InterfaceTimeline> = ({pius}) => {
 
   const getProcessedPius =  () => {
     const array = [];
-    console.log(pius);
     for(let i = 0; i<pius.length; i++) {
       let liked = GrayHeart;
       pius[i].likes.map((like) => {
@@ -39,7 +38,6 @@ const Timeline: React.FC<InterfaceTimeline> = ({pius}) => {
       })
     }
     setProcessedPius(array);
-    console.log(array);
   }
 
   useEffect(() => {

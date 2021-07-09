@@ -93,3 +93,22 @@ export const FeedHeader = styled.View`
     justify-content: space-between;
     border: 1px solid #828282;
 `
+
+export const AddButtonView = styled.View`
+    position: fixed;
+    bottom: 6vh;
+    right: 3vw;
+    height: 50px;
+    width: 50px;
+`
+
+export const AddButton = styled.TouchableOpacity`
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+`
+
+export const AddImage = styled.Image`
+    height: 50px;
+    width: 50px;
+`

@@ -9,7 +9,8 @@ import { useEffect } from 'react';
 import SearchIcon from '../../assets/icons/search-icon.png';
 import PinkHome from '../../assets/icons/pink-home-icon.png';
 import ProfileIcon from '../../assets/icons/profile-icon.png';
-import { ScrollView, TouchableOpacity } from 'react-native';
+import { ScrollView, TouchableOpacity, Image, View } from 'react-native';
+import AddIcon from '../../assets/icons/add-icon.png';
 
 const Feed: React.FC = () => {
   const { logout, token } = useAuth();
@@ -42,17 +43,19 @@ const Feed: React.FC = () => {
           <Timeline pius={pius}/>
         </S.Timeline>
       </ScrollView>
-      <TouchableOpacity>
-        
-      </TouchableOpacity>
+      <S.AddButtonView>
+        <S.AddButton>
+          <S.AddImage source={AddIcon}/>
+        </S.AddButton>
+      </S.AddButtonView>
       <S.NavigationBar>
-          <S.NavButtons activeOpacity={1}>
-            <S.NavIcons source={PinkHome}/>
-          </S.NavButtons>
-          <S.NavButtons activeOpacity={1}>
-            <S.NavIcons source={ProfileIcon}/>
-          </S.NavButtons>
-        </S.NavigationBar>
+        <S.NavButtons activeOpacity={1}>
+          <S.NavIcons source={PinkHome}/>
+        </S.NavButtons>
+        <S.NavButtons activeOpacity={1}>
+          <S.NavIcons source={ProfileIcon}/>
+        </S.NavButtons>
+      </S.NavigationBar>
     </S.Container>
   );
 };

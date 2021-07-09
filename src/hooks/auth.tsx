@@ -9,7 +9,8 @@ const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 export const AuthProvider: React.FC = ({children}) => {
     const [userData, setUserData] = useState<AuthState>({} as AuthState);
-    
+    const [postedNewPiu, setPostedNewPiu ] = useState(0);
+
   useEffect(() => {
     async function getAuth ()  {
       try {
@@ -55,6 +56,8 @@ export const AuthProvider: React.FC = ({children}) => {
         token: userData.token,
         login: login,
         logout: logout,
+        postedNewPiu: postedNewPiu,
+        setPostedNewPiu: setPostedNewPiu,
     }}
     >
         {children}

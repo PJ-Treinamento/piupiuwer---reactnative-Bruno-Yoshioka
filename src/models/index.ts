@@ -34,7 +34,9 @@ export interface AuthContextData {
     user: User,
     token: string,
     login(loginCred : LoginCredentials): void,
-    logout(): void
+    logout(): void,
+		postedNewPiu: number,
+		setPostedNewPiu: React.Dispatch<React.SetStateAction<number>>,
   }
 
 export interface AuthState {
@@ -63,4 +65,8 @@ export interface InterfaceTimeline {
 
 export interface PiuId {
 	id: string;
+}
+
+export interface PiuText {
+  text: string;
 }

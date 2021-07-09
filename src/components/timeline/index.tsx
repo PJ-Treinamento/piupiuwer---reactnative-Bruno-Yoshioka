@@ -9,7 +9,7 @@ import PinkHeart from '../../assets/icons/pink-heart-icon.png';
 import GrayStar from '../../assets/icons/gray-star-icon.png';
 import YellowStar from '../../assets/icons/yellow-star-icon.png';
 
-const Timeline: React.FC<InterfaceTimeline> = ({pius}) => {
+const Timeline: React.FC<InterfaceTimeline> = ({pius, search}) => {
   const { user } = useAuth();
   
   const [ processedPius, setProcessedPius ] = useState<ProcessedPiu[]>([]);
@@ -47,17 +47,18 @@ const Timeline: React.FC<InterfaceTimeline> = ({pius}) => {
   return(
     <>
       {processedPius.map((piu) => {
-        return (
-        <PiuCard
-          id={piu.id}
-          user={piu.user}
-          likes={piu.likes}
-          text={piu.text}
-          liked={piu.liked}
-          favd={piu.favd}
-          mine={piu.mine}
-        />
-      )})}
+        if (search === '' || piu.user.first_name.toLowerCase().includes(search.toLowerCase())) {
+          return (
+          <PiuCard
+            id={piu.id}
+            user={piu.user}
+            likes={piu.likes}
+            text={piu.text}
+            liked={piu.liked}
+            favd={piu.favd}
+            mine={piu.mine}
+          />
+      )}})}
     </>
   );
 }

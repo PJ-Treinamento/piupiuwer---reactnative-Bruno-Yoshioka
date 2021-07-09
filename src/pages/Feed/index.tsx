@@ -45,7 +45,7 @@ const Feed: React.FC = () => {
         </S.FeedHeader>
       <ScrollView showsVerticalScrollIndicator={false} >
         <S.Timeline>
-          <Timeline pius={pius}/>
+          <Timeline pius={pius} search={search}/>
         </S.Timeline>
       </ScrollView>
       <S.AddButtonView>

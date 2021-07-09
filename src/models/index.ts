@@ -61,6 +61,7 @@ export interface ProcessedPiu {
 
 export interface InterfaceTimeline {
   pius: Piu[];
+	search: string;
 }
 
 export interface PiuId {

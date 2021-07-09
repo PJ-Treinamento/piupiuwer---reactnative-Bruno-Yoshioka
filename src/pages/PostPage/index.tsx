@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { TouchableOpacity, View, Image, TextInput, Text } from "react-native";
 import { useAuth } from "../../hooks/auth";
 import * as S from './styles';
 import ExitIcon from '../../assets/icons/exit-icon.png';

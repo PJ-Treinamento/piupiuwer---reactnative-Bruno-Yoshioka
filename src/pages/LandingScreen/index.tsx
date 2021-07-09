@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from '../../pages/LandingScreen/styles';
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, Image } from 'react-native';
+import { Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const LandingScreen: React.FC = () => {
@@ -10,7 +10,6 @@ const LandingScreen: React.FC = () => {
     <S.container>
       <StatusBar style='dark'/>
       <S.EntryPage>
-        <Text>Landing Screen</Text>
         <S.Logo source={require('../../assets/logo.png')} />
         <Text>Seja bem vindo ao Piupiuwer</Text>
         <View>

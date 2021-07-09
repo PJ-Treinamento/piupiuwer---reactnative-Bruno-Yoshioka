@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { View } from 'react-native';
 import { useState } from 'react';
 import * as S from './styles'
 import { useAuth } from '../../hooks/auth';
@@ -12,7 +12,6 @@ const LoginScreen: React.FC = () => {
 
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Login Screen</Text>
         <StatusBar style="auto" />
         <S.BInput 
         placeholder='Email' 

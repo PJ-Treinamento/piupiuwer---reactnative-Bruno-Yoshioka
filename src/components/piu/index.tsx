@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { useEffect } from "react";
-import { View, Image, Text, TouchableOpacity } from "react-native";
+import { View, Text } from "react-native";
 import { useAuth } from "../../hooks/auth";
 import { ProcessedPiu, PiuId } from "../../models";
 import api from "../../services/api";
@@ -9,10 +8,9 @@ import GrayHeart from '../../assets/icons/gray-heart-icon.png';
 import PinkHeart from '../../assets/icons/pink-heart-icon.png';
 import GrayStar from '../../assets/icons/gray-star-icon.png';
 import YellowStar from '../../assets/icons/yellow-star-icon.png';
-import Trash from '../../assets/icons/trash-icon.png';
 
 const PiuCard: React.FC<ProcessedPiu> = ({id, user, likes, text, liked, favd, mine} : ProcessedPiu) => {
-  const { token, user: myUser } = useAuth();
+  const { user: myUser } = useAuth();
   const [ isLiked, setIsLiked ] = useState(liked);
   const [ isFavd, setIsFavd ] = useState(favd);
   const [ likeCounter, setLikeCounter] = useState(likes.length);

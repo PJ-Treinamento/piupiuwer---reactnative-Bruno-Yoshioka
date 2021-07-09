@@ -112,3 +112,13 @@ export const AddImage = styled.Image`
     height: 50px;
     width: 50px;
 `
+
+export const BInput = styled.TextInput`
+  background-color: #DEDEDE;
+  margin-top: 8px;
+  width: 200px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 8px;
+`

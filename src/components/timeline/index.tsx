@@ -47,7 +47,10 @@ const Timeline: React.FC<InterfaceTimeline> = ({pius, search}) => {
   return(
     <>
       {processedPius.map((piu) => {
-        if (search === '' || piu.user.first_name.toLowerCase().includes(search.toLowerCase())) {
+        if (search === '' 
+        || piu.user.first_name.toLowerCase().includes(search.toLowerCase())
+        || piu.user.username.toLowerCase().includes(search.toLowerCase())
+        || piu.text.toLowerCase().includes(search.toLowerCase())) {
           return (
           <PiuCard
             id={piu.id}

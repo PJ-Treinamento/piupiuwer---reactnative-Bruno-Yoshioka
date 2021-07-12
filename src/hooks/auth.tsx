@@ -47,7 +47,6 @@ export const AuthProvider: React.FC = ({children}) => {
       AsyncStorage.removeItem('@Project:token');
 
       setUserData({} as AuthState);
-      console.log('salve');
   };
   
   return (

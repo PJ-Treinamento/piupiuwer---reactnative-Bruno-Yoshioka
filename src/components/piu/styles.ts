@@ -20,7 +20,7 @@ export const Card = styled.View<{displayed: boolean}>`
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  width: 90vw;
+  width: 100%;
   border: 2px solid #DEDEDE;
   border-radius: 8px;
   margin-bottom: 4px;
@@ -30,7 +30,7 @@ export const Card = styled.View<{displayed: boolean}>`
 export const PhotoView = styled.View`
   align-items: center;
   justify-content: flex-start;
-  width: 10vw;
+  width: 10%;
 `
 
 export const UserPhoto = styled.Image`
@@ -40,12 +40,12 @@ export const UserPhoto = styled.Image`
 `
 
 export const ContentView = styled.View`
-  width: 75vw;
+  width: 75%;
   padding-left: 8px;
 `
 
 export const ViewContentHeader = styled.View`
-  width: 75vw;
+  width: 75%;
   height: 40px;
   display: flex;
   flex-direction: row;
@@ -61,10 +61,11 @@ export const HeaderText = styled.View`
 
 export const UserFirstName = styled.Text`
   margin-right: 8px;
+  color: white;
 `
 
 export const UserUsername = styled.Text`
-  
+  color: white;
 `
 
 export const PiuText = styled.Text`
@@ -72,7 +73,7 @@ export const PiuText = styled.Text`
 `
 
 export const InteractiveButtons = styled.TouchableOpacity`
-  width: 30vw;
+  width: 30%;
   height: 20;
   flex-direction: row;
   align-items: flex-end;
@@ -80,7 +81,7 @@ export const InteractiveButtons = styled.TouchableOpacity`
 `
 
 export const Interactions = styled.View`
-  width: 70vw;
+  width: 70%;
   height: 20px;
   flex-direction: row;
   align-items: center;

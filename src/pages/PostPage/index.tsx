@@ -5,16 +5,18 @@ import ExitIcon from '../../assets/icons/exit-icon.png';
 import { useNavigation } from "@react-navigation/native";
 import { PiuText } from "../../models";
 import api from "../../services/api";
+import { NativeSyntheticEvent } from "react-native";
+import { TextInputChangeEventData } from "react-native";
 
 const PostPage: React.FC = () => {
   const { user, postedNewPiu, setPostedNewPiu } = useAuth();
   const { navigate } = useNavigation();
 
-  const [ piuText, setPiuText ] = useState('');
-  const [overLimit, setOverLimit] = useState(false);
+  const [ piuText, setPiuText ] = useState<string>('');
+  const [overLimit, setOverLimit] = useState<boolean>(false);
 
-  const handleChange = (e: any) => {
-    const userInput = e.currentTarget?.value;
+  const handleChange = (e: NativeSyntheticEvent<TextInputChangeEventData>) => {
+    const userInput = e.nativeEvent.text;
     setPiuText(userInput);
     userInput.length > 140 ? setOverLimit(true) : setOverLimit(false);
   };
@@ -46,7 +48,7 @@ const PostPage: React.FC = () => {
           <S.UserPhoto source={{uri: `${user.photo}`}}/>          
         </S.ViewPhoto>
         <S.TextWrapper>
-          <S.PullTopWrapper>
+          
             <S.TxtArea
             overLimit={overLimit}
             placeholder='O que você está pensando?'
@@ -58,10 +60,10 @@ const PostPage: React.FC = () => {
             multiline={true}
             >
             </S.TxtArea>
-          </S.PullTopWrapper>
-          <S.PullTopWrapper>
+          
+          
             <S.Contagem overLimit={overLimit}>{piuText.length}/140</S.Contagem>
-          </S.PullTopWrapper>
+          
         </S.TextWrapper>
       </S.ViewBody>
     </S.Container>

@@ -3,13 +3,15 @@ import styled, { css } from "styled-components/native";
 export const Container = styled.View`
   flex: 1;
   background-color: #3F3D56;
+  flex-direction: column;
+  align-items: center;
 `
 
 export const PostHeader = styled.View`
-  height: 8vh;
-  width: 100vw;
+  height: 100px;
+  width: 100%;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   padding: 20px;
   border: 1px solid #828282;
@@ -38,16 +40,18 @@ export const PiuButtonText = styled.Text`
 `
 
 export const ViewBody = styled.View`
-  height: 91vh;
-  width: 100vw;
+  height:100%;
+  width: 100%;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10px;
+  padding-right: 40px;
+  padding-left: 40px;
 `
 
 export const ViewPhoto = styled.View`
-  height: 91vh;
+  height: 60px;
   width: 60px;
   align-items: flex-start;
 `
@@ -61,24 +65,21 @@ export const UserPhoto = styled.Image`
 
 export const TextWrapper = styled.View`
   flex-direction: row;
-  justify-content: right;
+  padding-left: 10px;
 `
 
 export const TxtArea = styled.TextInput<{overLimit: boolean}>`
-  width: 60vw;
-  height: 90vh;
-  padding: 10px;
+  flex: 1;
   ${({overLimit}) => css`
       color: ${overLimit?'red' : '#FFFFFF'};
   `}
   border: none;
-  outline: none;
 `
 
 export const Contagem = styled.Text<{overLimit: boolean}>`
   margin-left: 10px;
   width: 60px;
-  height: 91vh;
+  height: 91%;
   color: ${props => props.overLimit? 'red' : '#FFFFFF'};
 `
 

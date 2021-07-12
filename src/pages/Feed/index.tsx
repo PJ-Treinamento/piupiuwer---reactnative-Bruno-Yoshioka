@@ -44,9 +44,11 @@ const Feed: React.FC = () => {
           </S.BInput>
         </S.FeedHeader>
       <ScrollView showsVerticalScrollIndicator={false} >
-        <S.Timeline>
-          <Timeline pius={pius} search={search}/>
-        </S.Timeline>
+        <S.TL>
+          <S.Timeline>
+            <Timeline pius={pius} search={search}/>
+          </S.Timeline>
+        </S.TL>
       </ScrollView>
       <S.AddButtonView>
         <S.AddButton onPress={() => {navigate('PostPage')}}>
@@ -54,10 +56,10 @@ const Feed: React.FC = () => {
         </S.AddButton>
       </S.AddButtonView>
       <S.NavigationBar>
-        <S.NavButtons activeOpacity={1}>
-          <S.NavIcons source={PinkHome}/>
+        <S.NavButtons activeOpacity={0.5} onPress={() => {navigate('Feed')}}>
+          <S.NavIcons source={PinkHome} />
         </S.NavButtons>
-        <S.NavButtons activeOpacity={1}>
+        <S.NavButtons activeOpacity={0.5} onPress={() => {navigate('Feed')}}>
           <S.NavIcons source={ProfileIcon}/>
         </S.NavButtons>
       </S.NavigationBar>

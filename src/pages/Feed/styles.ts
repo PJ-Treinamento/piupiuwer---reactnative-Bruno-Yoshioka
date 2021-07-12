@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const LogoutButton = styled.TouchableOpacity`
-    margin-top: 8px;
+    margin-top: 40px;
     height: 30px;
     width: 60px;
     border-radius: 8px;
@@ -11,7 +11,7 @@ export const LogoutButton = styled.TouchableOpacity`
 `
 
 export const SearchButton = styled.TouchableOpacity`
-    margin-top: 8px;
+    margin-top: 40px;
     height: 30px;
     width: 60px;
     border-radius: 8px;
@@ -32,12 +32,9 @@ export const Container = styled.View`
 ` 
 
 export const Timeline = styled.View`
-    margin-top: 6vh;
-    margin-bottom: 6vh;
-    width: 90vw;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    width: 90%;
 ` 
 
 export const Logo = styled.Image`
@@ -47,25 +44,25 @@ export const Logo = styled.Image`
 
 export const NavigationBar = styled.View`
     background-color: #3F3D56;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     display: flex;
     flex: 1;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    height: 5vh;
-    padding: 0 5vw;
+    justify-content: space-around;
+    height: 40px;
+    width: 100%;
+    padding: 5px;
     border: 1px solid #828282;
 `
 
 export const NavButtons = styled.TouchableOpacity`
     align-items: center;
     justify-content: center;
-    height: 40px;
-    width: 45vw;
+    height: 38px;
+    width: auto;
     background-color: #3F3D56;
-    opacity: 100%;
 `
 
 export const NavIcons = styled.Image`
@@ -79,13 +76,13 @@ export const NavIconsSearch = styled.Image`
 `
 
 export const FeedHeader = styled.View`
-    position: fixed;
+    position: absolute;
     top: 0;
-    height: 5vh;
-    width: 100vw;
-    padding-right: 5vw;
-    padding-left: 5vw;
-    padding-bottom: 1vh;
+    height: 80px;
+    width: 100%;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-bottom: 1%;
     background-color: #3F3D56;
     z-index: 1;
     flex-direction: row;
@@ -95,9 +92,9 @@ export const FeedHeader = styled.View`
 `
 
 export const AddButtonView = styled.View`
-    position: fixed;
-    bottom: 6vh;
-    right: 3vw;
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
     height: 50px;
     width: 50px;
 `
@@ -115,10 +112,14 @@ export const AddImage = styled.Image`
 
 export const BInput = styled.TextInput`
   background-color: #DEDEDE;
-  margin-top: 8px;
+  margin-top: 40px;
   width: 200px;
   height: 30px;
   border: 1px solid black;
   border-radius: 4px;
   padding: 8px;
+`
+
+export const TL = styled.View`
+    align-items: center;
 `

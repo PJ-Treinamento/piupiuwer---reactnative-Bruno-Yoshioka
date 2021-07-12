@@ -4,17 +4,17 @@ import { useAuth } from '../../hooks/auth';
 import * as S from './styles'
 import { Piu } from "../../models";
 import api from '../../services/api';
-import Timeline from '../../components/timeline';
 import { useEffect } from 'react';
-import PinkHome from '../../assets/icons/pink-home-icon.png';
-import ProfileIcon from '../../assets/icons/profile-icon.png';
-import { ScrollView } from 'react-native';
+import Home from '../../assets/icons/home-icon.png';
+import PinkProfileIcon from '../../assets/icons/pink-profile-icon.png';
+import { ScrollView, Text, View } from 'react-native';
 import AddIcon from '../../assets/icons/add-icon.png';
 import { useNavigation } from '@react-navigation/native';
+import MyTimeline from '../../components/myTimeline';
 
 
-const Feed: React.FC = () => {
-  const { logout, postedNewPiu } = useAuth();
+const ProfilePage: React.FC = () => {
+  const { user, logout, postedNewPiu } = useAuth();
   const { navigate } = useNavigation();
   
   const [ pius, setPius ] = useState<Piu[]>([]);
@@ -43,9 +43,22 @@ const Feed: React.FC = () => {
           </S.BInput>
         </S.FeedHeader>
       <ScrollView showsVerticalScrollIndicator={false} >
+        <S.ProfileView>
+          <S.ProfilePhotoView>
+            <S.ProfilePhoto  source={{uri: `${user.photo}`}}/>
+          </S.ProfilePhotoView>
+          <S.UserInfo>
+            <S.UserInfoText>
+              {user.first_name+" "+user.last_name+"   @"+user.username}
+            </S.UserInfoText>
+            <S.UserInfoText>
+              {user.followers.length+" followers   "+user.following.length+" following"}
+            </S.UserInfoText>
+          </S.UserInfo>
+        </S.ProfileView>
         <S.TL>
           <S.Timeline>
-            <Timeline pius={pius} search={search}/>
+            <MyTimeline pius={pius} search={search}/>
           </S.Timeline>
         </S.TL>
       </ScrollView>
@@ -56,14 +69,14 @@ const Feed: React.FC = () => {
       </S.AddButtonView>
       <S.NavigationBar>
         <S.NavButtons activeOpacity={0.5} onPress={() => {navigate('Feed')}}>
-          <S.NavIcons source={PinkHome} />
+          <S.NavIcons source={Home} />
         </S.NavButtons>
         <S.NavButtons activeOpacity={0.5} onPress={() => {navigate('ProfilePage')}}>
-          <S.NavIcons source={ProfileIcon}/>
+          <S.NavIcons source={PinkProfileIcon}/>
         </S.NavButtons>
       </S.NavigationBar>
     </S.Container>
   );
 };
 
-export default Feed;
+export default ProfilePage;

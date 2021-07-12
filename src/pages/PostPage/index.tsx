@@ -9,7 +9,7 @@ import { NativeSyntheticEvent } from "react-native";
 import { TextInputChangeEventData } from "react-native";
 
 const PostPage: React.FC = () => {
-  const { user, postedNewPiu, setPostedNewPiu } = useAuth();
+  const { user, token, postedNewPiu, setPostedNewPiu } = useAuth();
   const { navigate } = useNavigation();
 
   const [ piuText, setPiuText ] = useState<string>('');
@@ -47,8 +47,7 @@ const PostPage: React.FC = () => {
         <S.ViewPhoto>
           <S.UserPhoto source={{uri: `${user.photo}`}}/>          
         </S.ViewPhoto>
-        <S.TextWrapper>
-          
+        <S.TextWrapper>          
             <S.TxtArea
             overLimit={overLimit}
             placeholder='O que você está pensando?'
@@ -60,10 +59,7 @@ const PostPage: React.FC = () => {
             multiline={true}
             >
             </S.TxtArea>
-          
-          
             <S.Contagem overLimit={overLimit}>{piuText.length}/140</S.Contagem>
-          
         </S.TextWrapper>
       </S.ViewBody>
     </S.Container>

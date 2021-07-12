@@ -14,7 +14,7 @@ const Timeline: React.FC<InterfaceTimeline> = ({pius, search}) => {
   
   const [ processedPius, setProcessedPius ] = useState<ProcessedPiu[]>([]);
 
-  const getProcessedPius =  () => {
+  const getProcessedPius = () => {
     const array = [];
     for(let i = 0; i<pius.length; i++) {
       let liked = GrayHeart;
@@ -38,11 +38,11 @@ const Timeline: React.FC<InterfaceTimeline> = ({pius, search}) => {
       })
     }
     setProcessedPius(array);
-  }
+  };
 
   useEffect(() => {
     getProcessedPius();
-  },[pius])
+  },[pius]);
 
   return(
     <>

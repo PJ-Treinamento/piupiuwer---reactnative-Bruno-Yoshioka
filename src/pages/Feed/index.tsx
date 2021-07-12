@@ -21,12 +21,11 @@ const Feed: React.FC = () => {
   const [ reload, setReload ] = useState(0);
   const [ search, setSearch ] = useState('');
 
-  const getPius = async () => {
-    const response = await api.get("/pius");
-    setPius(response.data);
-  };
-
   useEffect(() => {
+    const getPius = async () => {
+      const response = await api.get("/pius");
+      setPius(response.data);
+    };
     getPius();
   }, [reload, postedNewPiu]);
 

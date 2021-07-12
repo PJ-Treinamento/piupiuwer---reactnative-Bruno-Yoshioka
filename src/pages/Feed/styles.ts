@@ -32,8 +32,8 @@ export const Container = styled.View`
 ` 
 
 export const Timeline = styled.View`
-    margin-top: 100px;
-    margin-bottom: 50px;
+    margin-top: 90px;
+    margin-bottom: 40px;
     width: 90%;
 ` 
 
